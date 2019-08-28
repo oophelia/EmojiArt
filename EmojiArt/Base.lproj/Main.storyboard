@@ -76,50 +76,115 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BkN-jW-Txs">
-                                <rect key="frame" x="0.0" y="20" width="768" height="1004"/>
+                                <rect key="frame" x="0.0" y="108" width="768" height="916"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nIy-ga-nbN" customClass="EmojiArtView" customModule="EmojiArt" customModuleProvider="target">
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="apZ-q9-VpG">
                                         <rect key="frame" x="0.0" y="0.0" width="768" height="1004"/>
                                         <subviews>
-                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="J8L-Tu-eRo">
-                                                <rect key="frame" x="365.5" y="483.5" width="37" height="37"/>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="P89-Tm-2g1">
+                                                <rect key="frame" x="365.5" y="439.5" width="37" height="37"/>
                                                 <color key="color" red="0.928433642" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </activityIndicatorView>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstItem="J8L-Tu-eRo" firstAttribute="centerX" secondItem="nIy-ga-nbN" secondAttribute="centerX" id="Ix8-4r-kMB"/>
-                                            <constraint firstItem="J8L-Tu-eRo" firstAttribute="centerY" secondItem="nIy-ga-nbN" secondAttribute="centerY" id="NI8-l6-rP2"/>
+                                            <constraint firstItem="P89-Tm-2g1" firstAttribute="centerX" secondItem="apZ-q9-VpG" secondAttribute="centerX" id="CEb-7N-v8x"/>
+                                            <constraint firstAttribute="width" priority="250" constant="768" id="LVT-Ce-4jN"/>
+                                            <constraint firstAttribute="height" priority="250" constant="1004" id="k0c-f2-8Qr"/>
+                                            <constraint firstItem="P89-Tm-2g1" firstAttribute="centerY" secondItem="apZ-q9-VpG" secondAttribute="centerY" id="tlV-qx-5fS"/>
                                         </constraints>
-                                    </view>
+                                    </scrollView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="nIy-ga-nbN" firstAttribute="top" secondItem="BkN-jW-Txs" secondAttribute="top" id="6NG-G7-RfJ"/>
-                                    <constraint firstAttribute="trailing" secondItem="nIy-ga-nbN" secondAttribute="trailing" id="R9K-jH-gFK"/>
-                                    <constraint firstAttribute="bottom" secondItem="nIy-ga-nbN" secondAttribute="bottom" id="de7-cc-YK0"/>
-                                    <constraint firstItem="nIy-ga-nbN" firstAttribute="leading" secondItem="BkN-jW-Txs" secondAttribute="leading" id="njl-GC-6ou"/>
+                                    <constraint firstItem="apZ-q9-VpG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="BkN-jW-Txs" secondAttribute="leading" id="FQz-XU-4UU"/>
+                                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="apZ-q9-VpG" secondAttribute="bottom" id="LVy-OJ-1UM"/>
+                                    <constraint firstItem="apZ-q9-VpG" firstAttribute="centerY" secondItem="BkN-jW-Txs" secondAttribute="centerY" id="hxf-Lh-g0L"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="apZ-q9-VpG" secondAttribute="trailing" id="rfk-Hx-bBf"/>
+                                    <constraint firstItem="apZ-q9-VpG" firstAttribute="top" relation="greaterThanOrEqual" secondItem="BkN-jW-Txs" secondAttribute="top" id="x18-c6-DIQ"/>
+                                    <constraint firstItem="apZ-q9-VpG" firstAttribute="centerX" secondItem="BkN-jW-Txs" secondAttribute="centerX" id="zcg-wS-fn8"/>
                                 </constraints>
                             </view>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xut-Fk-JPc">
+                                <rect key="frame" x="0.0" y="20" width="768" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="d8w-Yx-5Ff"/>
+                                </constraints>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sr1-KL-W4U">
+                                    <size key="itemSize" width="80" height="80"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EmojiCell" id="wS6-gK-5kC" customClass="EmojiCollectionViewCell" customModule="EmojiArt" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="🤪" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rb9-7j-dxD">
+                                                    <rect key="frame" x="5.5" y="1.5" width="69" height="77"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="64"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="Rb9-7j-dxD" firstAttribute="centerX" secondItem="wS6-gK-5kC" secondAttribute="centerX" id="XHF-8J-xHF"/>
+                                            <constraint firstItem="Rb9-7j-dxD" firstAttribute="centerY" secondItem="wS6-gK-5kC" secondAttribute="centerY" id="cH4-8m-MG5"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="label" destination="Rb9-7j-dxD" id="ub5-vZ-MIL"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DropPlaceHolderCell" id="E7D-iw-WtD">
+                                        <rect key="frame" x="90" y="0.0" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="VnH-kF-sXC">
+                                                    <rect key="frame" x="30" y="30" width="20" height="20"/>
+                                                    <color key="color" red="0.928433642" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </activityIndicatorView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="VnH-kF-sXC" firstAttribute="centerY" secondItem="E7D-iw-WtD" secondAttribute="centerY" id="G37-Yn-PxE"/>
+                                            <constraint firstItem="VnH-kF-sXC" firstAttribute="centerX" secondItem="E7D-iw-WtD" secondAttribute="centerX" id="Ptj-2s-ui7"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="BkN-jW-Txs" firstAttribute="top" secondItem="xut-Fk-JPc" secondAttribute="bottom" constant="8" symbolic="YES" id="20w-wg-SRK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xut-Fk-JPc" secondAttribute="trailing" id="GBm-98-FRy"/>
                             <constraint firstItem="BkN-jW-Txs" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Go0-Gp-kAU"/>
                             <constraint firstItem="BkN-jW-Txs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IOB-Lq-Js2"/>
+                            <constraint firstItem="xut-Fk-JPc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="KSp-Br-bo4"/>
                             <constraint firstItem="BkN-jW-Txs" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="PL0-kb-F2L"/>
-                            <constraint firstItem="BkN-jW-Txs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Q4e-TM-9R0"/>
+                            <constraint firstItem="xut-Fk-JPc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="tk8-s0-RGF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="dropZone" destination="BkN-jW-Txs" id="3RZ-0v-I4f"/>
-                        <outlet property="emojiArtView" destination="nIy-ga-nbN" id="61M-Ru-Jh6"/>
-                        <outlet property="spinner" destination="J8L-Tu-eRo" id="925-NR-xaB"/>
+                        <outlet property="emojiCollectionView" destination="xut-Fk-JPc" id="QSf-5B-jyk"/>
+                        <outlet property="scrollView" destination="apZ-q9-VpG" id="FcI-cM-ZfW"/>
+                        <outlet property="scrollViewHeight" destination="k0c-f2-8Qr" id="Tn2-K0-vey"/>
+                        <outlet property="scrollViewWidth" destination="LVT-Ce-4jN" id="NeM-FV-pZt"/>
+                        <outlet property="spinner" destination="P89-Tm-2g1" id="bCe-bP-Mnq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="19.921875" y="23.4375"/>
+            <point key="canvasLocation" x="19.53125" y="23.4375"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2cf-md-BGH">

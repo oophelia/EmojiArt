@@ -33,6 +33,16 @@ class EmojiArtDocumentTableViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    // when a splitView's layout changes, it often resets the preferred mode
+    // make the splitViewn could be slided out in landscape
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        // set preferredDisplayMode will cause it to relayout, use if to avoid loops
+        if splitViewController?.preferredDisplayMode != .primaryOverlay {
+            splitViewController?.preferredDisplayMode = .primaryOverlay
+        }
+    }
+    
     
     /*
     // Override to support conditional editing of the table view.
