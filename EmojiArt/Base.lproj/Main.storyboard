@@ -80,17 +80,9 @@
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="apZ-q9-VpG">
                                         <rect key="frame" x="0.0" y="0.0" width="768" height="1004"/>
-                                        <subviews>
-                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="P89-Tm-2g1">
-                                                <rect key="frame" x="365.5" y="439.5" width="37" height="37"/>
-                                                <color key="color" red="0.928433642" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </activityIndicatorView>
-                                        </subviews>
                                         <constraints>
-                                            <constraint firstItem="P89-Tm-2g1" firstAttribute="centerX" secondItem="apZ-q9-VpG" secondAttribute="centerX" id="CEb-7N-v8x"/>
                                             <constraint firstAttribute="width" priority="250" constant="768" id="LVT-Ce-4jN"/>
                                             <constraint firstAttribute="height" priority="250" constant="1004" id="k0c-f2-8Qr"/>
-                                            <constraint firstItem="P89-Tm-2g1" firstAttribute="centerY" secondItem="apZ-q9-VpG" secondAttribute="centerY" id="tlV-qx-5fS"/>
                                         </constraints>
                                     </scrollView>
                                 </subviews>
@@ -104,6 +96,11 @@
                                     <constraint firstItem="apZ-q9-VpG" firstAttribute="centerX" secondItem="BkN-jW-Txs" secondAttribute="centerX" id="zcg-wS-fn8"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="P89-Tm-2g1">
+                                <rect key="frame" x="365" y="493" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="0.928433642" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </activityIndicatorView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xut-Fk-JPc">
                                 <rect key="frame" x="0.0" y="20" width="768" height="80"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -157,6 +154,57 @@
                                             <constraint firstItem="VnH-kF-sXC" firstAttribute="centerY" secondItem="E7D-iw-WtD" secondAttribute="centerY" id="G37-Yn-PxE"/>
                                             <constraint firstItem="VnH-kF-sXC" firstAttribute="centerX" secondItem="E7D-iw-WtD" secondAttribute="centerX" id="Ptj-2s-ui7"/>
                                         </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="AddEmojiButtonCell" id="X3I-u7-jRG">
+                                        <rect key="frame" x="180" y="0.0" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4zq-O5-q00">
+                                                    <rect key="frame" x="8" y="7" width="64" height="65"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                    <state key="normal" title="+"/>
+                                                    <connections>
+                                                        <action selector="addEmoji:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R9T-r5-uoO"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="4zq-O5-q00" firstAttribute="top" secondItem="X3I-u7-jRG" secondAttribute="topMargin" id="0zw-vd-tGc"/>
+                                            <constraint firstItem="4zq-O5-q00" firstAttribute="bottom" secondItem="X3I-u7-jRG" secondAttribute="bottomMargin" id="3rV-rW-00M"/>
+                                            <constraint firstItem="4zq-O5-q00" firstAttribute="leading" secondItem="X3I-u7-jRG" secondAttribute="leadingMargin" id="UoM-QH-Yje"/>
+                                            <constraint firstItem="4zq-O5-q00" firstAttribute="trailing" secondItem="X3I-u7-jRG" secondAttribute="trailingMargin" id="VeC-M5-fwR"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="EmojiInputCell" id="rr5-NO-yRv" customClass="TextFieldCollectionViewCell" customModule="EmojiArt" customModuleProvider="target">
+                                        <rect key="frame" x="270" y="0.0" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5Y2-sK-Adl">
+                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="5Y2-sK-Adl" firstAttribute="leading" secondItem="rr5-NO-yRv" secondAttribute="leading" id="2w7-su-SIF"/>
+                                            <constraint firstItem="5Y2-sK-Adl" firstAttribute="leading" secondItem="rr5-NO-yRv" secondAttribute="leading" id="9ec-VF-SkN"/>
+                                            <constraint firstAttribute="trailing" secondItem="5Y2-sK-Adl" secondAttribute="trailing" id="Vsj-kL-9LX"/>
+                                            <constraint firstItem="5Y2-sK-Adl" firstAttribute="top" secondItem="rr5-NO-yRv" secondAttribute="top" id="bqu-Xn-ARg"/>
+                                            <constraint firstAttribute="trailing" secondItem="5Y2-sK-Adl" secondAttribute="trailing" id="k13-kM-Lvs"/>
+                                            <constraint firstAttribute="bottom" secondItem="5Y2-sK-Adl" secondAttribute="bottom" id="oWc-t0-xwc"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="textField" destination="5Y2-sK-Adl" id="Li3-v5-CFy"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
